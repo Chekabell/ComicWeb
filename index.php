@@ -1,10 +1,17 @@
+<?php 
+    session_start();
+    $_SESSION['nickname'] = '';
+    $_SESSION['needReg'] = false;
+    $_SESSION['message'] = '';
+    $_SESSION["debug"] = '';
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
+    <link rel="styleWsheet" href="main.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="plate.css">
     <link rel="stylesheet" href="mini-plate.css">
