@@ -16,7 +16,7 @@ $objProfile = json_decode($jsonForProfile, true);
     </div>
     <div class = 'head-left'>
         <div id = "main-link"><span>главная</span></div>
-        <div tabindex = "0" class = "search">
+        <div class = "search">
             <div class = "search-input">
                 <input type = "text" id = "elastic" placeholder = "Поиск...">
             </div>
@@ -45,28 +45,31 @@ $objProfile = json_decode($jsonForProfile, true);
                         ?>">
                     </div>
                     <div id = "profile-nick">
-                        <?php echo $_SESSION['nickname'] ?>
+                        <span>
+                            <?php echo $_SESSION['nickname'] ?>
+                        </span>
                     </div>
                 <?} else {?>
-                    <div id = "profile-nick">войти</div>
+                    <div id = "profile-nick"><span>войти</span></div>
                 <?}?>
             </div>
             <?php
                 if ($_SESSION['nickname'] !== ''){?>
-            <div id = "acc-menu">
-                <div class = "acc-menu-plate">Закладки</div>
-                <?if($_SESSION['editor']){?>
-                    <div class = "acc-menu-plate" id = "add-project">Добавить проект</div>
-                <?}?>
-                <div class = "acc-menu-plate" id = "exit">Выход</div>
-            </div>
+                    <div id = "acc-menu">
+                        <div class = "acc-menu-plate">Закладки</div>
+                        <?if($_SESSION['editor']){?>
+                            <div class = "acc-menu-plate" id = "add-project">Добавить проект</div>
+                            <script>
+                            document.getElementById("add-project").addEventListener("click", function(){
+                                window.location.href = "addProject.php";
+                            });
+                            </script>
+                        <?}?>
+                        <div class = "acc-menu-plate" id = "exit">Выход</div>
+                    </div>
             <script>
-                document.getElementById("add-project").addEventListener("click", function(){
-                    window.location.href = "addProject.php";
-                });
-
                 document.getElementById('exit').addEventListener("click", function(){
-                    window.location.href = 'PHPscripts\\exit.php';
+                    window.location.href = 'PHPscripts/exit.php';
                 });
             </script>
             <?}?>
@@ -78,27 +81,35 @@ $objProfile = json_decode($jsonForProfile, true);
     const header_left = document.querySelector('.head-left');
     const header_right = document.querySelector('.head-right');
     const header = document.querySelector('header');
-    
+
     burger.addEventListener('click', () => {
         burger.classList.toggle('active');
         if(burger.classList.contains('active')){
             header_left.style.display = 'flex';
             header_right.style.display = 'flex';
-            header.style.height = '200px';
-            window.dispatchEvent(new Event('resize'));
+            header.style.height = '210px';
+            document.dispatchEvent(new Event('resize-padding'));
         } else{
             header_left.style.display = 'none';
             header_right.style.display = 'none';
-            header.style.height = '40px';
-            window.dispatchEvent(new Event('resize'));
+            header.style.height = '50px';
+            document.dispatchEvent(new Event('resize-padding'));
         }
     });
 
+    let flag = true;
     window.addEventListener('resize', function(){
-        if (header.offsetWidth > 900){ 
+        if (flag && window.matchMedia('(width > 900px)').matches){
+            flag = false;
+            header_left.style.display = 'flex';
+            header_right.style.display = 'flex';
             burger.classList.remove('active');
-            header.style.height = '40px';
-            window.dispatchEvent(new Event('resize'));
+            header.style.height = '50px';
+            document.dispatchEvent(new Event('resize-padding'));
+        } else if(!flag && window.matchMedia('(width <= 900px)').matches){
+            header_left.style.display = 'none';
+            header_right.style.display = 'none';
+            flag = true;
         }
     });
 
@@ -122,17 +133,20 @@ $objProfile = json_decode($jsonForProfile, true);
             menu.style.display = 'none';
         });
     };
+
     document.querySelector('#main-link span').addEventListener("click", function(){
         window.location.href = 'index.php';
     });
 
+    const search = document.getElementsByClassName('search')[0];
+    const elastic = document.getElementsByClassName('elastic')[0];
 
-    document.getElementsByClassName('search')[0].addEventListener("focusin", function(){
-        document.getElementsByClassName('elastic')[0].classList.remove('elastic-hide');
+    search.addEventListener("focusin", function(){
+        elastic.classList.remove('elastic-hide');
     });
 
-    document.getElementsByClassName('search')[0].addEventListener("focusout", function(){
-        document.getElementsByClassName('elastic')[0].classList.add('elastic-hide');
+    search.addEventListener("focusout", function () {
+        elastic.classList.add("elastic-hide");
     });
 
     document.getElementById('elastic').oninput = function() {
@@ -188,8 +202,9 @@ $objProfile = json_decode($jsonForProfile, true);
     items = JSON.parse(items);
     document.querySelectorAll('.elastic div').forEach(function(project) {
         let idElem = project.id.slice(-1);
-        project.addEventListener("click", function (){
-            window.location.href = 'projectPage.php?id=' + items[idElem]['id_project'];
+        project.addEventListener("mousedown", function (){
+            console.log('/projectPage.php?id=' + items[idElem]['id_project']);
+            window.location.href = '/projectPage.php?id=' + items[idElem]['id_project'];
         });
     });
 </script>

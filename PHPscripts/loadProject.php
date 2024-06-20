@@ -95,5 +95,4 @@ if($sth->execute([':project_name' => $_POST['project_name'], ':description' => $
         header('Location: http://comicweb/index.php');
         exit();
     }
-
 }

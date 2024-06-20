@@ -9,7 +9,8 @@ body{
     backdrop-filter: blur(5px);
 }
 
-section{
+.content{
+    display: flex;
     margin:7%;
     color: var(--text-color);
     position: relative;

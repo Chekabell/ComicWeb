@@ -6,7 +6,7 @@ $sth = $db->query("SELECT id_user FROM mainschem.account WHERE nickname = " . $d
 $data = $sth->fetch();
 $upploadDir = "C:\OSPanel\domains\ComicWeb\IMG\PROFILE_PHOTO\\";
 $upploadFile = $upploadDir . $data[0] . ".png";
-echo $upploadFile;
+
 if (move_uploaded_file($_FILES['userfile']['tmp_name'], $upploadFile)) {
     $db->query("UPDATE mainschem.account SET avatar = true WHERE nickname = " . $db->quote($_SESSION['nickname']));
 	$info   = getimagesize($upploadFile);

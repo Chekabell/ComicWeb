@@ -5,7 +5,7 @@
 header{
     position: fixed;
     display: flex;
-    height: 40px;
+    height: 50px;
     width: 100%;
     background-color: var(--header-color);
     justify-content: space-between;
@@ -19,8 +19,10 @@ header{
 }
 
 #menu-button{
-    max-height: 100%;
+    height: 50px;
     display: none;
+    align-items: center;
+    padding-left: 1%;
 }
 
 .burger {
@@ -80,7 +82,7 @@ header{
 
 .head-left, .head-right{
     display: flex;
-    width: 50%;
+    flex: 1;
 }
 
 .head-right{
@@ -96,19 +98,25 @@ header{
 }
 
 .search-input{
-    height: 100%;
+    height: 50px;
     width: 100%;
     display: flex;
-    align-items: center;
 }
 
 .search-input input{
+    border: none;
+    position: relative;
+    top: 5px;
+    height: 40px;
     width: 100%;
+}
+.search-input input:focus{
+    outline: none;
 }
 
 .elastic{
-    min-width: 100%;
-    margin-bottom: 1%;
+    margin-top: 10px;
+    width: 100%;
     background-color: var(--header-color);
 }
 
@@ -191,6 +199,9 @@ header{
 }
 
 #profile-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 20%;
 }
 
@@ -201,9 +212,13 @@ header{
     border-radius: 5px;
     background-color: black;
     max-height: 90%;
+    max-width: 90%;
 }
 
 #profile-nick{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     width: 80%;
 }
 
@@ -222,7 +237,7 @@ header{
 
 @media (max-width: 900px){
     #menu-button{
-        display: unset;
+        display: flex;
     }
 
     .search{
@@ -246,6 +261,7 @@ header{
     }
     #swapper{
         height: 50%;
+        width: 100%;
     }
     #profile{
         flex-direction: row;
@@ -254,14 +270,13 @@ header{
     #profile-photo{
         height: 100%;
     }
+    #profile-nick{
+        height: 100%;
+    }
     #acc{
         padding-right: 0;
         height: 50%;
         width: 100%;
-    }
-    #profile-photo img{
-        max-height:100%;
-        max-width: 100%;
     }
     #main-link span{
         width: 100%;

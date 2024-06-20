@@ -10,6 +10,7 @@
     cursor: pointer;
     background-color: var(--accent-color);
 }
+
 .plate-img{
     width: 100%;
 }
@@ -35,6 +36,17 @@
     color: var(--text-color);
 }
 
+.plate-description p{
+    display: none;
+    font-weight: bold;
+    font-size: small;
+    font-family: "Oswald", sans-serif;
+    color: var(--text-color);
+    -webkit-line-clamp: 6; /* Число отображаемых строк */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    overflow: hidden; /* Обрезаем всё за пределами блока */
+}
+
 @media (max-width: 900px){
     .hot-new > div{
         max-height: 10%;
@@ -50,5 +62,16 @@
     }
     .plate-img img{
         height: 100%;
+    }
+    .plate-description h1{
+        border-bottom: 1px solid var(--accent-color);
+    }
+    .plate-description{
+        width: 80%;
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    .plate-description p{
+        display: -webkit-box;
     }
 }

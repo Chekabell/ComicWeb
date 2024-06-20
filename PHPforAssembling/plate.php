@@ -5,5 +5,6 @@
     <div class = "plate-description">
         <h3>&#9733 <?echo $objNames[$i]['average_rating']?></h3>
         <h1><?echo $objNames[$i]['project_name']?></h1>
+        <p><?echo $objNames[$i]['description']?></p>
     </div>
 </div>

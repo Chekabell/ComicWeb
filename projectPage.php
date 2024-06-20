@@ -20,17 +20,19 @@ $infoProject = json_decode($jsonForInfoProject, true);
 <body style = "background-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.9) 40%,var(--background-color) 60%), url(IMG/PROJECT_PHOTO/<?echo ($_GET['id'].'.png')?>);">
     <?php include "PHPforAssembling\\header.php"?>
     <section>
-        <div id = "project-img">
-            <img src = "IMG/PROJECT_PHOTO/<?echo ($_GET['id'].'.png')?>"/>
-            <div id = "button-read">Читать</div>
-        </div>
-        <div id = "info">
-            <div id = "info-title">
-                <h1><?echo $infoProject[0]['project_name']?></h1>
+        <div class = "content">
+            <div id = "project-img">
+                <img src = "IMG/PROJECT_PHOTO/<?echo ($_GET['id'].'.png')?>"/>
+                <div id = "button-read">Читать</div>
             </div>
-            <div id = "info-desctiption">
-                <h3>Описание</h3>
-                <p><?echo $infoProject[0]['description']?></p>
+            <div id = "info">
+                <div id = "info-title">
+                    <h1><?echo $infoProject[0]['project_name']?></h1>
+                </div>
+                <div id = "info-desctiption">
+                    <h3>Описание</h3>
+                    <p><?echo $infoProject[0]['description']?></p>
+                </div>
             </div>
         </div>
     </section>
@@ -41,5 +43,9 @@ $infoProject = json_decode($jsonForInfoProject, true);
     document.querySelector('#button-read').addEventListener("click", function(){
         window.location.href = url;
     });
+    section = document.querySelector('section');
+    document.addEventListener('resize-padding', function(){
+        section.style.paddingTop = header.offsetHeight + 20 + 'px';
+    })
 </script>
 </html>

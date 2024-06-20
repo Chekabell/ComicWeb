@@ -4,7 +4,7 @@
     if (!isset($_SESSION['editor'])) $_SESSION['editor'] = false;
     $_SESSION['message'] = '';
     require "PHPscripts\\dbConnect.php";
-    $sth = $db->query("SELECT id_project, project_name, average_rating, url_read FROM mainschem.projects");
+    $sth = $db->query("SELECT id_project, project_name, description, average_rating, url_read FROM mainschem.projects");
     $quantityProjects = $sth->rowCount();
     $jsonforindex = json_encode($sth->fetchAll(PDO::FETCH_ASSOC));
     $objNames = json_decode($jsonforindex, true);
@@ -24,7 +24,6 @@
     <title>WebComic</title>
 </head>
 <body>
-    
     <?php include "PHPforAssembling\\header.php"?>
     <section>
         <div class = "hot-new">
@@ -48,9 +47,8 @@
         });
     });
     section = document.querySelector('section');
-    section.style.paddingTop = header.offsetHeight+20 + 'px';
-    window.addEventListener('resize', function(){
-        section.style.paddingTop = header.offsetHeight+20 + 'px';
+    document.addEventListener('resize-padding', function(){
+        section.style.paddingTop = header.offsetHeight + 20 + 'px';
     })
 </script>
 </html>

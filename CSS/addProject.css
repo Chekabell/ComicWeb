@@ -2,11 +2,10 @@ body{
     height: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0;
-    background-color: var(--background-color);
 }
 
-section{
+.content{
+    position: relative;
     color: var(--text-color);
     width: 80%;
     left: 10%;
