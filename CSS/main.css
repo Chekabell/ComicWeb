@@ -1,0 +1,57 @@
+:root {
+    --background-color: rgb(18, 17, 15);
+    --text-color: whitesmoke;
+    --accent-color: rgb(53, 53, 52);
+    --header-color: rgb(38, 37, 36);
+}
+
+:root.light-theme {
+    --background-color: rgb(218, 217, 215);
+    --text-color: rgb(16, 15, 15);
+    --accent-color: rgb(253, 253, 252);
+    --header-color: rgb(238, 237, 236);
+}
+
+body{
+    margin: 0;
+    background-color: var(--background-color);
+}
+
+section{
+    position: relative;
+}
+
+.hot-new{
+    max-height: 25%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    border-bottom: 15px outset var(--accent-color);
+}
+
+.main-agregator{
+    position: relative;
+    padding-top: 2%;
+    display: flex;
+    left:5%;
+    width: 90%;
+    height: 800px;
+}
+
+.main-agregator-in{
+    justify-content: center;
+    width: 33.3%;
+    height: 100%;
+}
+
+@media (max-width: 900px){
+    .hot-new{
+        max-height: 93%;
+        flex-direction: column;
+        border-bottom: 0;
+        align-items: unset;
+    }
+    .main-agregator{
+        display: none;
+    }
+}

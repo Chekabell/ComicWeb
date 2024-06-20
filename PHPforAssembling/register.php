@@ -1,4 +1,4 @@
-<form action = "reg.php" method = "post">
+<form action = "/PHPscripts/reg.php" method = "post">
     <input type = "text" name = "nickname" placeholder="Ваш никнейм">
     <input type = "email" name = "email" placeholder = "Ваша почта">
     <input type = "password" name = "password" placeholder="Ваш пароль">
@@ -8,4 +8,9 @@
 <?echo $_SESSION['message'];
 $_SESSION['message'] = '';?>
 <br>
-<a href = 'acc-logScript.php'>Уже есть аккаунт?</a>
+<span id = "redirect">Уже есть аккаунт?</span>
+<script>
+    document.getElementById('redirect').addEventListener("click", function(){
+        window.location.href = 'acc.php?reg=0';
+    })
+</script>

@@ -1,0 +1,54 @@
+.hot-new > div {
+    width: 10%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+}
+.hot-new > div:hover{
+    cursor: pointer;
+    background-color: var(--accent-color);
+}
+.plate-img{
+    width: 100%;
+}
+
+.plate-img img{
+    border-radius: 3% 3% 0 0;
+    max-height: 100%;
+    width: 100%;
+}
+
+.plate-description h1{
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-line-clamp: 2; /* Число отображаемых строк */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    overflow: hidden; /* Обрезаем всё за пределами блока */
+}
+.plate-description h1, .plate-description h3{
+    margin-top: 0;
+    margin-bottom: 1%;
+    font-weight: bold;
+    font-size: small;
+    font-family: "Oswald", sans-serif;
+    color: var(--text-color);
+}
+
+@media (max-width: 900px){
+    .hot-new > div{
+        max-height: 10%;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0.5%;
+        flex-direction: row;
+    }
+    .plate-img{
+        min-height: 100%;
+        width: 20%;
+    }
+    .plate-img img{
+        height: 100%;
+    }
+}

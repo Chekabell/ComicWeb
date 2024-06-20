@@ -1,0 +1,4 @@
+            <input type = "text" name = "project_name" placeholder="Название проекта" />
+            <input type = "text" name = "description" placeholder="Краткое описание" />
+            <input type = "text" name = "average_rating" placeholder="Средний рейтинг"/>
+            <input type = "url" name = "url_read" placeholder="Ссылка на первую главу для прочтения" />
