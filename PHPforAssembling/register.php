@@ -5,7 +5,8 @@
     <input type = "password" name = "password2" placeholder="Подтвердите пароль">
     <button type = "submit">Отправить</button>
 </form>
-<?echo $_SESSION['message'];
+<?
+echo $_SESSION['message'];
 $_SESSION['message'] = '';?>
 <br>
 <span id = "redirect">Уже есть аккаунт?</span>

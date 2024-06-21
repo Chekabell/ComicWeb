@@ -12,14 +12,14 @@ if($data){
             exit();
         } else {
             $_SESSION['message'] = "Неправильный пароль!";
-            header('location: http://comicweb/acc.php');
+            header('location: http://comicweb/acc.php?reg=0');
             exit();
         }
     }
 }
 else{
     $_SESSION['message'] = "Имени пользователя не существует!";
-    header('Location: http://comicweb/acc.php');
+    header('Location: http://comicweb/acc.php?reg=0');
     exit();
 }
 ?>

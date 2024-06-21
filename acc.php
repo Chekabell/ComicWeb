@@ -1,21 +1,6 @@
-<?session_start()?>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
-    <link rel= "stylesheet" href="CSS\\main.css">
-    <link rel= "stylesheet" href="CSS\\acc.css">
-    <link rel= "stylesheet" href="CSS\\header.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebComic</title>
-</head>
-<body>
     <?php include "PHPforAssembling\\header.php"?>
     <section>
-        <div class="content">
+        <div class="content content-mod">
             <?if ($_SESSION['nickname'] == ''){
                 if($_GET['reg'] == 1){
                     include "PHPforAssembling\\register.php";

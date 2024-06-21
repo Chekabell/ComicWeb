@@ -1,21 +1,6 @@
-<?session_start()?>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS\\main.css">
-    <link rel="stylesheet" href="CSS\\addProject.css">
-    <link rel="stylesheet" href="CSS\\header.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebComic</title>
-</head>
-<body>
-    <?php include "PHPforAssembling\\header.php"?>
+<?php include "PHPforAssembling\\header.php"?>
     <section>
-        <div class = "content">
+        <div class = "content content-mod">
             <form enctype="multipart/form-data" action = "PHPscripts\\loadProject.php" method = "POST">
                 <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
                 <input name="userfile" type="file" accept = "image/png, image/jpeg, image/jpg" />

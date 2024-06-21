@@ -7,5 +7,9 @@ if ($_POST["password"] === $_POST["password2"]){
         header('Location: http://comicweb/index.php');
         exit();
     }
+} else {
+    $_SESSION['message'] = 'Пароли не совпадают!';
+    header('Location: http://comicweb/acc.php?reg=1');
+    exit();
 }
 ?>

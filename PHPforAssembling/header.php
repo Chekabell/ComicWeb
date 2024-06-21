@@ -10,6 +10,24 @@ $sth = $db->query("SELECT id_user, avatar FROM mainschem.account WHERE nickname 
 $jsonForProfile = json_encode($sth->fetchAll(PDO::FETCH_ASSOC));
 $objProfile = json_decode($jsonForProfile, true);
 ?>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS\\main.css">
+    <link rel="stylesheet" href="CSS\\acc.css">
+    <link rel="stylesheet" href="CSS\\addProject.css">
+    <link rel="stylesheet" href="CSS\\header.css">
+    <link rel="stylesheet" href="CSS\\plate.css">
+    <link rel="stylesheet" href="CSS\\mini-plate.css">
+    <link rel="stylesheet" href="CSS\\projectPage.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebComic</title>
+</head>
+<body>
 <header>
     <div id = "menu-button">
         <button class="burger"></button>

@@ -8,23 +8,7 @@
     $quantityProjects = $sth->rowCount();
     $jsonforindex = json_encode($sth->fetchAll(PDO::FETCH_ASSOC));
     $objNames = json_decode($jsonforindex, true);
-?>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CSS\\main.css">
-    <link rel="stylesheet" href="CSS\\header.css">
-    <link rel="stylesheet" href="CSS\\plate.css">
-    <link rel="stylesheet" href="CSS\\mini-plate.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebComic</title>
-</head>
-<body>
-    <?php include "PHPforAssembling\\header.php"?>
+    include "PHPforAssembling\\header.php"?>
     <section>
         <div class = "hot-new">
             <?php

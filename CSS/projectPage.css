@@ -9,16 +9,6 @@ body{
     backdrop-filter: blur(5px);
 }
 
-.content{
-    display: flex;
-    margin:7%;
-    color: var(--text-color);
-    position: relative;
-    min-height: 93%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
 
 #project-img{
     height: 100%;
@@ -29,6 +19,11 @@ body{
 
 #project-img img{
     max-width: 100%;
+}
+
+.content-project{
+    font-size: 1.5em;
+    align-items: flex-start;
 }
 
 #button-read{
